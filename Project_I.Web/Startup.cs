@@ -47,6 +47,10 @@ namespace Project_I.Web
             });
             //services.AddSingleton<IAmazonCognitoIdentityProvider>(provider);
             //services.AddSingleton(CognitoUserPool);
+            services.ConfigureApplicationCookie(options=> {
+                options.LoginPath = "Accounts/Login";
+
+            });
             services.AddControllersWithViews();
         }
 
